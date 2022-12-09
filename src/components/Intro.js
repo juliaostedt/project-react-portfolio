@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { Container } from './StyleComp';
 
+// Testa slå ihop stylingen för StyledIntro och IntroText till en och samma div-komponent
 const Intro = () => {
   return (
     <StyledIntro>

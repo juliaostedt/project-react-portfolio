@@ -3,38 +3,56 @@ import styled from 'styled-components'
 import OtherProjects, { TagWrapper, TagWrapperText, TagRepo, Title, ProjectWrapper } from './OtherProjects';
 
 import { SectionTitle, Container } from './StyleComp'
-import projects from './projects.json'
 
+// import projects from './projects.json'
+import projects from '../data/projects.json';
+
+// Jobba bort den ostylade diven -> den kan du ta bort genom att styla FeaturedProjectWrapper
+// Få ut titeln och project description ut från a-taggen
 const FeaturedProjects = () => {
+  // Bryt ut renderProjectTags till en egen komponent
+  // så kan du använda den här i FeaturedProjects och i OtherProjects
+  const renderProjectTags = (project) => {
+    return (
+      project.tags.map((tag) => (
+        <TagWrapperText key={tag.id}>{tag.tech}</TagWrapperText>
+      ))
+    )
+  }
+
+  const renderedProjects = () => {
+    return projects.slice(0, 2).map((project) => {
+      return (
+        <FeaturedProjectWrapper key={project.id}>
+          <div>
+            <a href={project.netlify_link} target="_blank" rel="noreferrer">
+              <ImgWrapper>
+                <Image src={project.project_img} alt="project" />
+                <Overlay>{project.title}</Overlay>
+              </ImgWrapper>
+              <Title>{project.title}</Title>
+              <p>{project.project_description}</p>
+            </a>
+            <TagWrapper>
+              {renderProjectTags(project)}
+              <a
+                href={project.repo_link}
+                target="_blank"
+                rel="noreferrer"><TagRepo>GitHub Repo</TagRepo>
+              </a>
+            </TagWrapper>
+          </div>
+        </FeaturedProjectWrapper>
+      )
+    })
+  }
+
   return (
     <>
       <FeaturedProjectsStyled>
         <SectionTitle>Featured Projects</SectionTitle>
         <div>
-          {projects.slice(0, 2).map((project) => (
-            <FeaturedProjectWrapper key={project.id}>
-              <div>
-                <a href={project.netlify_link} target="_blank" rel="noreferrer">
-                  <ImgWrapper>
-                    <Image src={project.project_img} alt="project" />
-                    <Overlay>{project.title}</Overlay>
-                  </ImgWrapper>
-                  <Title>{project.title}</Title>
-                  <p>{project.project_description}</p>
-                </a>
-                <TagWrapper>
-                  {project.tags.map((tag) => (
-                    <TagWrapperText key={tag.id}>{tag.tech}</TagWrapperText>
-                  ))}
-                  <a
-                    href={project.repo_link}
-                    target="_blank"
-                    rel="noreferrer"><TagRepo>GitHub Repo</TagRepo>
-                  </a>
-                </TagWrapper>
-              </div>
-            </FeaturedProjectWrapper>
-          ))}
+          {renderedProjects()}
         </div>
       </FeaturedProjectsStyled>
       <OtherProjects />

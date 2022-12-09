@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 
 import { SectionSubTitle, Container } from './StyleComp'
-import projects from './projects.json'
+// import projects from './projects.json'
+import projects from '../data/projects.json';
 
 const OtherProjects = () => {
   return (

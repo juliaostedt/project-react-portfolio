@@ -4,8 +4,45 @@ import styled from 'styled-components'
 import profileImg from '../assets/profile-img.jpg'
 import backgroundImg from '../assets/hero-1.jpg'
 import { Icons } from './StyleComp.js'
+import linkedinLogo from '../assets/icon-linkedin.svg'
+import githubLogo from '../assets/icon-github.svg'
 
-const Header = ({ linkedinLogo, githubLogo }) => {
+// const Header = ({ linkedinLogo, githubLogo }) => {
+//   return (
+//     <HeaderStyling>
+//       <div>
+//         <HeaderText>
+//           <p>Portfolio: <span>Julia Östedt</span></p>
+//           <h1>frontend developer</h1>
+//           <h2>with an executive assistant background</h2>
+//         </HeaderText>
+//         <ImgContainer>
+//           <ProfileImg
+//             src={profileImg}
+//             alt="headshot-of-Julia" />
+//         </ImgContainer>
+//       </div>
+//       <HeaderIcons>
+//         <a
+//           href="https://www.linkedin.com/in/juliaostedt/"
+//           target="_blank"
+//           rel="noreferrer"
+//           aria-label="Link to LinkedIn profile">
+//           <img src={linkedinLogo} alt="LinkedIn logo" />
+//         </a>
+//         <a
+//           href="https://github.com/juliaostedt"
+//           target="_blank"
+//           rel="noreferrer"
+//           aria-label="Link to LinkedIn profile">
+//           <img src={githubLogo} alt="github logo" />
+//         </a>
+//       </HeaderIcons>
+//     </HeaderStyling>
+//   )
+// }
+
+const Header = () => {
   return (
     <HeaderStyling>
       <div>
@@ -21,6 +58,9 @@ const Header = ({ linkedinLogo, githubLogo }) => {
         </ImgContainer>
       </div>
       <HeaderIcons>
+        {/* Bryt ut till en ikonkomponent som tar in href och img src som prop */}
+        {/* Icon href="https://www.linkedin.com/in/juliaostedt/" imgSrc={linkedinLogo}/> */}
+        {/* Icon href="https://github.com/juliaostedt" imgSrc={githubLogo}/> */}
         <a
           href="https://www.linkedin.com/in/juliaostedt/"
           target="_blank"

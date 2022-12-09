@@ -2,8 +2,30 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { Icons } from './StyleComp.js'
+// import linkedinLogo from '../assets/icon-linkedin.svg'
+// import githubLogo from '../assets/icon-github.svg'
 
-const Footer = ({ linkedinLogo, githubLogo }) => {
+// const Footer = ({ linkedinLogo, githubLogo }) => {
+//   return (
+//     <FooterStyle>
+//       <h2>Contact</h2>
+//       <p>Julia Östedt</p>
+//       <a href="mailto:julia.ostedt@gmail.com">
+//           julia.ostedt@gmail.com
+//       </a>
+//       <FooterIcons>
+//         <a href="https://www.linkedin.com/in/juliaostedt/" aria-label="Link to LinkedIn profile">
+//           <img src={linkedinLogo} alt="LinkedIn logo" />
+//         </a>
+//         <a href="https://github.com/juliaostedt" aria-label="Link to LinkedIn profile">
+//           <img src={githubLogo} alt="github logo" />
+//         </a>
+//       </FooterIcons>
+//     </FooterStyle>
+//   )
+// }
+
+const Footer = () => {
   return (
     <FooterStyle>
       <h2>Contact</h2>
@@ -12,12 +34,9 @@ const Footer = ({ linkedinLogo, githubLogo }) => {
           julia.ostedt@gmail.com
       </a>
       <FooterIcons>
-        <a href="https://www.linkedin.com/in/juliaostedt/" aria-label="Link to LinkedIn profile">
-          <img src={linkedinLogo} alt="LinkedIn logo" />
-        </a>
-        <a href="https://github.com/juliaostedt" aria-label="Link to LinkedIn profile">
-          <img src={githubLogo} alt="github logo" />
-        </a>
+        {/* Bryt ut till en ikonkomponent som tar in href och img src som prop */}
+        {/* Icon href="https://www.linkedin.com/in/juliaostedt/" imgSrc={linkedinLogo}/> */}
+        {/* Icon href="https://github.com/juliaostedt" imgSrc={githubLogo}/> */}
       </FooterIcons>
     </FooterStyle>
   )
